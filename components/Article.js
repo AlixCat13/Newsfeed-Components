@@ -103,7 +103,7 @@ const data = [
 
   Your function should take either an object as its one argument, or 5 separate strings mapping to each property of an article object.
 
-  Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
+  Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
 
   Step 3: Don't forget to return something from your function!
 
@@ -111,3 +111,54 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+
+
+// write a component function called articleMaker - should take 5 strings mapping to each property of an article object
+
+const articleMaker = (title, date, firstParagraph, secondParagraph, thirdParagraph) => {
+
+const articleTitle = document.createElement('h2')
+const articleDate = document.createElement('p')
+const articleTop = document.createElement('p')
+const articleMiddle = document.createElement('p')
+const articleBottom = document.createElement('p')
+
+articleTitle.appendChild(articleDate)
+articleDate.appendChild(articleTop)
+articleTop.appendChild(articleMiddle)
+articleMiddle.appendChild(articleBottom)
+articleBottom.appendChild(articleTitle)
+
+articleTitle.classList.add('.articles')
+articleDate.classList.add('.article')
+
+}
+
+
+//create all the elements that are in the component
+
+
+
+//create the HTML structure by making some elements children of the parent elements. 
+
+
+
+//add classes to style the component
+
+
+
+//add content using .textContent
+
+
+//add an event listener to the expandButton span - should toggle the class 'article-open' on the 'article' div.
+
+
+//write a return statement for the function
+
+
+
+//outside your function, loop over the data. At each iteration you'll use your component to create an article and append it to the DOM inside the 'articles' div.
+
+
+
+//Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
