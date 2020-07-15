@@ -115,27 +115,25 @@ const data = [
 
 // write a component function called articleMaker - should take 5 strings mapping to each property of an article object
 
-const articleMaker = (title, date, firstParagraph, secondParagraph, thirdParagraph) => {
+function articleMaker(title, date, firstParagraph, secondParagraph, thirdParagraph) {
 
-const articleTitle = document.createElement('h2')
-const articleDate = document.createElement('p')
-const articleTop = document.createElement('p')
-const articleMiddle = document.createElement('p')
-const articleBottom = document.createElement('p')
+//create all the elements that are in the component
 
-articleTitle.appendChild(articleDate)
-articleDate.appendChild(articleTop)
-articleTop.appendChild(articleMiddle)
-articleMiddle.appendChild(articleBottom)
-articleBottom.appendChild(articleTitle)
+const maker = document.createElement('div')
+const h2 = document.createElement('h2')
+const date = document.createElement('p')
+const firstPara = document.createElement('p')
+const secPara = document.createElement('p')
+const thirdPara = document.createElement
 
-articleTitle.classList.add('.articles')
-articleDate.classList.add('.article')
+
 
 }
 
 
-//create all the elements that are in the component
+
+
+
 
 
 
