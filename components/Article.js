@@ -121,14 +121,38 @@ function articleMaker(title, date, firstParagraph, secondParagraph, thirdParagra
 
 const maker = document.createElement('div')
 const h2 = document.createElement('h2')
-const date = document.createElement('p')
+const calendar = document.createElement('p')
 const firstPara = document.createElement('p')
 const secPara = document.createElement('p')
-const thirdPara = document.createElement
+const thirdPara = document.createElement('p')
+const articleButton = document.createElement('div')
+const articleOpen = document.createElement('div')
+const articleClose = document.createElement('div')
+
+firstPara.classList.add('articles')
+secPara.classList.add('articles')
+thirdPara.classList.add('articles')
+maker.classList.add('article')
+calendar.classList.add('date')
+
+maker.append(h2, calendar, firstPara, secPara, thirdPara, articleButton, articleOpen, articleClose)
 
 
+h2.textContent = title
+calendar.textContent = date
+firstPara.textContent = firstParagraph
+secPara.textContent = secondParagraph
+thirdPara.textContent = thirdParagraph
+
+return maker
 
 }
+
+const header = document.querySelector('.header')
+
+data.forEach(data => 
+  header.appendChild(articleMaker(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+  )
 
 
 
