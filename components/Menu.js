@@ -69,5 +69,5 @@ return menuMaker
 }
 
 menuItems.forEach(data => {
-  menu.appendChild(menuMaker(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+  menu.appendChild(menuMaker(data))
 })
