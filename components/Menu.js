@@ -45,6 +45,14 @@ const menuMaker = (menuItems) => {
   const button = document.createElement('button')
   const buttonOpen = document.createElement('button')
 
+  students.textContent = students
+  faculty.textContent = faculty
+  whatsNew.textContent = whatsNew
+  techTrends.textContent = techTrends
+  music.textContent = music
+  logOut.textContent = logOut
+
+
   menu.appendChild(list)
   list.appendChild(students)
   list.appendChild(faculty)
@@ -59,3 +67,7 @@ const menuMaker = (menuItems) => {
 
 return menuMaker
 }
+
+menuItems.forEach(data => {
+  menu.appendChild(menuMaker(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+})
