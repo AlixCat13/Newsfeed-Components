@@ -33,11 +33,29 @@ let menuItems = [
 */
 
 const menuMaker = (menuItems) => {
-  
+
+  const menu = document.createElement('div')
+  const list = document.createElement('ul')
   const students = document.createElement('li')
   const faculty = document.createElement('li')
   const whatsNew = document.createElement('li')
   const techTrends = document.createElement('li')
   const music = document.createElement('li')
   const logOut = document.createElement('li')
+  const button = document.createElement('button')
+  const buttonOpen = document.createElement('button')
+
+  menu.appendChild(list)
+  list.appendChild(students)
+  list.appendChild(faculty)
+  list.appendChild(whatsNew)
+  list.appendChild(techTrends)
+  list.appendChild(music)
+  list.appendChild(logOut)
+  menu.appendChild(button)
+  button.appendChild(buttonOpen)
+
+  
+
+return menuMaker
 }
