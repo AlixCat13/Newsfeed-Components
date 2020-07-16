@@ -103,7 +103,7 @@ const data = [
 
   Your function should take either an object as its one argument, or 5 separate strings mapping to each property of an article object.
 
-  Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
+  Step 2: Add an event listener to the expandButton span. This listener should toggle the class 'article-open' on the 'article' div.
 
   Step 3: Don't forget to return something from your function!
 
@@ -116,82 +116,63 @@ const data = [
 // write a component function called articleMaker - should take 5 strings mapping to each property of an article object
 
 const articleMaker = (title, date, firstParagraph, secondParagraph, thirdParagraph) => {
-  const article = document.createElement('p')
+  const article = document.createElement('div')
+  const articleTitle = document.createElement('h2');
+  const day = document.createElement('p');
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+  const articleButton = document.createElement('span');
+  const articleButtonOpen = document.createElement('button')
 
-  //test code
+ article.appendChild(articleTitle);
+ article.appendChild(day);
+ article.appendChild(paragraph1);
+ article.appendChild(paragraph2);
+ article.appendChild(paragraph3);
+ article.appendChild(articleButton);
 
-  article.textContent = date;
 
-  return article;
+ article.classList.add('article')
+ article.classList.add('article-open')
+ day.classList.add('date')
+ articleButton.classList.add('expandButton')
+ articleButtonOpen.classList.add('article-open')
+//  articleButtonClose.classList.add('article-close')
+
+articleTitle.textContent = title;
+day.textContent = date;
+paragraph1.textContent = firstParagraph;
+paragraph2.textContent = secondParagraph;
+paragraph3.textContent = thirdParagraph;
+articleButtonOpen.textContent = '\u25bc'
+// articleButtonClose.textContent = '\u25b2'
+
+articleButton.addEventListener('click', () => {
+  console.log('clicked button')
+  articleButtonOpen.classList.toggle('article-open')
+  // articleButtonClose.classList.toggle('article-open')
+})
+
+ return article;
+
 }
 
-const articleComponent = articleMaker('date text')
+
+const articleComponent = articleMaker()
+
 const firstParagraph = document.querySelector('.articles')
+
 firstParagraph.appendChild(articleComponent)
-//create all the elements that are in the component
 
-// const maker = document.createElement('div')
-// const h2 = document.createElement('h2')
-// const calendar = document.createElement('p')
-// const firstPara = document.createElement('p')
-// const secPara = document.createElement('p')
-// const thirdPara = document.createElement('p')
-// const articleButton = document.createElement('div')
-// const articleOpen = document.createElement('div')
-// const articleClose = document.createElement('div')
+// firstParagraph.appendChild(articleMaker(data[0].title, data[0].date, data[0].firstParagraph, data[0].secondParagraph, data[0].thirdParagraph))
 
-// firstPara.classList.add('articles')
-// secPara.classList.add('articles')
-// thirdPara.classList.add('articles')
-// maker.classList.add('article')
-// calendar.classList.add('date')
+// firstParagraph.appendChild(articleMaker(data[1].title, data[1].date, data[1].firstParagraph, data[1].secondParagraph, data[1].thirdParagraph))
 
-// maker.append(h2, calendar, firstPara, secPara, thirdPara, articleButton, articleOpen, articleClose)
+// firstParagraph.appendChild(articleMaker(data[2].title, data[2].date, data[2].firstParagraph, data[2].secondParagraph, data[2].thirdParagraph))
 
+// firstParagraph.appendChild(articleMaker(data[3].title, data[3].date, data[3].firstParagraph, data[3].secondParagraph, data[3].thirdParagraph))
 
-// h2.textContent = title
-// calendar.textContent = date
-// firstPara.textContent = firstParagraph
-// secPara.textContent = secondParagraph
-// thirdPara.textContent = thirdParagraph
-
-// return maker
-
-// }
-
-// const header = document.querySelector('.header')
-
-// data.forEach(data => 
-//   header.appendChild(articleMaker(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
-//   )
-
-
-
-
-
-
-
-
-//create the HTML structure by making some elements children of the parent elements. 
-
-
-
-//add classes to style the component
-
-
-
-//add content using .textContent
-
-
-//add an event listener to the expandButton span - should toggle the class 'article-open' on the 'article' div.
-
-
-//write a return statement for the function
-
-
-
-//outside your function, loop over the data. At each iteration you'll use your component to create an article and append it to the DOM inside the 'articles' div.
-
-
-
-//Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+data.forEach(data => {
+  firstParagraph.appendChild(articleMaker(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+})
