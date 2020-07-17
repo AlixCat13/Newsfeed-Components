@@ -123,7 +123,6 @@ const articleMaker = (title, date, firstParagraph, secondParagraph, thirdParagra
   const paragraph2 = document.createElement('p');
   const paragraph3 = document.createElement('p');
   const articleButton = document.createElement('span');
-  const articleButtonOpen = document.createElement('button')
 
  article.appendChild(articleTitle);
  article.appendChild(day);
@@ -134,23 +133,22 @@ const articleMaker = (title, date, firstParagraph, secondParagraph, thirdParagra
 
 
  article.classList.add('article')
- article.classList.add('article-open')
  day.classList.add('date')
  articleButton.classList.add('expandButton')
- articleButtonOpen.classList.add('article-open')
-//  articleButtonClose.classList.add('article-close')
+
 
 articleTitle.textContent = title;
 day.textContent = date;
 paragraph1.textContent = firstParagraph;
 paragraph2.textContent = secondParagraph;
 paragraph3.textContent = thirdParagraph;
-articleButtonOpen.textContent = '\u25bc'
-// articleButtonClose.textContent = '\u25b2'
+articleButton.textContent = '+'
+
 
 articleButton.addEventListener('click', () => {
   console.log('clicked button')
-  articleButtonOpen.classList.toggle('article-open')
+  article.classList.toggle('article-open')
+  article.classList.toggle('close')
   // articleButtonClose.classList.toggle('article-open')
 })
 
