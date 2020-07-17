@@ -32,42 +32,52 @@ let menuItems = [
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
 
-const menuMaker = (menuItems) => {
+// const menuMaker = (menuItems) => {
 
-  const menu = document.createElement('div')
-  const list = document.createElement('ul')
-  const students = document.createElement('li')
-  const faculty = document.createElement('li')
-  const whatsNew = document.createElement('li')
-  const techTrends = document.createElement('li')
-  const music = document.createElement('li')
-  const logOut = document.createElement('li')
-  const button = document.createElement('button')
-  const buttonOpen = document.createElement('button')
+//   const menu = document.createElement('div')
+//   const list = document.createElement('ul')
+//   const students = document.createElement('li')
+//   const faculty = document.createElement('li')
+//   const whatsNew = document.createElement('li')
+//   const techTrends = document.createElement('li')
+//   const music = document.createElement('li')
+//   const logOut = document.createElement('li')
+//   const button = document.createElement('button')
+//   const buttonOpen = document.createElement('button')
 
-  students.textContent = students
-  faculty.textContent = faculty
-  whatsNew.textContent = whatsNew
-  techTrends.textContent = techTrends
-  music.textContent = music
-  logOut.textContent = logOut
+//   students.textContent = students
+//   faculty.textContent = faculty
+//   whatsNew.textContent = whatsNew
+//   techTrends.textContent = techTrends
+//   music.textContent = music
+//   logOut.textContent = logOut
 
 
-  menu.appendChild(list)
-  list.appendChild(students)
-  list.appendChild(faculty)
-  list.appendChild(whatsNew)
-  list.appendChild(techTrends)
-  list.appendChild(music)
-  list.appendChild(logOut)
-  menu.appendChild(button)
-  button.appendChild(buttonOpen)
+//   menu.appendChild(list)
+//   list.appendChild(students)
+//   list.appendChild(faculty)
+//   list.appendChild(whatsNew)
+//   list.appendChild(techTrends)
+//   list.appendChild(music)
+//   list.appendChild(logOut)
+//   menu.appendChild(button)
+//   button.appendChild(buttonOpen)
 
   
 
-return menuMaker
-}
+// return menuMaker
+// }
 
-menuItems.forEach(data => {
-  menu.appendChild(menuMaker(data))
+// menuItems.forEach(data => {
+//   list.appendChild(menuMaker(data))
+// })
+
+const listMenu = menuItems.forEach(() => {
+  list = document.createElement('li')
+  menu = document.createElement('div')
+  
+
+  return listMenu
 })
+
+console.log(listMenu)
