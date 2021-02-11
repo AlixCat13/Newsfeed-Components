@@ -31,3 +31,82 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
+
+
+
+  // const menu = document.createElement('div')
+  // const list = document.createElement('ul')
+  // const students = document.createElement('li')
+  // const faculty = document.createElement('li')
+  // const whatsNew = document.createElement('li')
+  // const techTrends = document.createElement('li')
+  // const music = document.createElement('li')
+  // const logOut = document.createElement('li')
+  // const button = document.createElement('button')
+  // const buttonOpen = document.createElement('button')
+
+//   students.textContent = students
+//   faculty.textContent = faculty
+//   whatsNew.textContent = whatsNew
+//   techTrends.textContent = techTrends
+//   music.textContent = music
+//   logOut.textContent = logOut
+
+
+//   menu.appendChild(list)
+//   list.appendChild(students)
+//   list.appendChild(faculty)
+//   list.appendChild(whatsNew)
+//   list.appendChild(techTrends)
+//   list.appendChild(music)
+//   list.appendChild(logOut)
+//   menu.appendChild(button)
+//   button.appendChild(buttonOpen)
+
+  
+
+// return menuMaker
+// }
+
+// menuItems.forEach(data => {
+//   list.appendChild(menuMaker(data))
+// })
+
+const menuMaker = (menuItems) => {
+ 
+  const menu = document.createElement('div')
+  const listItems = document.createElement('ul')
+
+  menu.classList.add('menu')
+  
+  menuItems.forEach(object => {
+    const list = document.createElement('li')
+    list.textContent = object
+    listItems.appendChild(list)
+
+  })
+
+ menu.appendChild(listItems)
+
+  const menuButton = document.querySelector('.menu-button')
+  menuButton.addEventListener('click', () => {
+  menu.classList.toggle('menu--open')
+     })
+
+
+  return menu
+}
+
+const header = document.querySelector('.header')
+header.appendChild(menuMaker(menuItems))
+
+// console.log(menu)
+
+  // menu.textContent = menu
+  // listItems.textContent = listItems
+  // students.textContent = students
+  // faculty.textContent = faculty
+  // whatsNew.textContent = whatsNew
+  // techTrends.textContent = techTrends
+  // music.textContent = music
+  // logOut.textContent = logOut

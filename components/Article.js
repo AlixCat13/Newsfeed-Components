@@ -111,3 +111,67 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+
+
+// write a component function called articleMaker - should take 5 strings mapping to each property of an article object
+
+const articleMaker = (title, date, firstParagraph, secondParagraph, thirdParagraph) => {
+  const article = document.createElement('div')
+  const articleTitle = document.createElement('h2');
+  const day = document.createElement('p');
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+  const articleButton = document.createElement('span');
+
+ article.appendChild(articleTitle);
+ article.appendChild(day);
+ article.appendChild(paragraph1);
+ article.appendChild(paragraph2);
+ article.appendChild(paragraph3);
+ article.appendChild(articleButton);
+
+
+ article.classList.add('article')
+ day.classList.add('date')
+ articleButton.classList.add('expandButton')
+
+
+articleTitle.textContent = title;
+day.textContent = date;
+paragraph1.textContent = firstParagraph;
+paragraph2.textContent = secondParagraph;
+paragraph3.textContent = thirdParagraph;
+articleButton.textContent = '+'
+
+
+articleButton.addEventListener('click', () => {
+  console.log('clicked button')
+  article.classList.toggle('article-open')
+  article.classList.toggle('close')
+  // articleButtonClose.classList.toggle('article-open')
+})
+
+ return article;
+
+}
+
+const firstParagraph = document.querySelector('.articles')
+
+const article = articleMaker('World of Warcraft', 'July 16th, 2020' ,'In the beginning there were elves and warlocks and giants and gnomes and trolls and elves. Wizard, gandolf, mordoor, hodor, jelly, peanut butter, there was a small scruffle of a man. Scataboosh, Scataboosh, Can you do the fandango? Thunderbolts of lightning, very very VERY frightening to me. Gallelo, gallelo, gallelo, what ever did this life have in store for meeeeee. I killed a man, took his life, now he is dead. How do we move on from here? Where do we go? What should we do? Who will we eat?' ,  'In the middle there was an epic battle of epic proportional maginutde. The earth shook and a firey vomit of lava and ash and rock and death came spewing out from the center of the earth. Bob the earth God was mad. This started a huge life altering battle. A battle where everyone fought everyone. Friends became foes and all was lost.......or was it?', 'In the end, the good guys lost and the bad guys lost and everyone was lost in depare and woe and another lord came to rule them on and make them rue the day they ever opened that cupboard. Bob went back to his kingdom in the clouse and Freddy Mercury went back to his flat in London and every one lived happily ever after.'
+)
+
+firstParagraph.appendChild(article)
+
+
+data.forEach(data => {
+  firstParagraph.appendChild(articleMaker(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+})
+
+// firstParagraph.appendChild(articleMaker(data[0].title, data[0].date, data[0].firstParagraph, data[0].secondParagraph, data[0].thirdParagraph))
+
+// firstParagraph.appendChild(articleMaker(data[1].title, data[1].date, data[1].firstParagraph, data[1].secondParagraph, data[1].thirdParagraph))
+
+// firstParagraph.appendChild(articleMaker(data[2].title, data[2].date, data[2].firstParagraph, data[2].secondParagraph, data[2].thirdParagraph))
+
+// firstParagraph.appendChild(articleMaker(data[3].title, data[3].date, data[3].firstParagraph, data[3].secondParagraph, data[3].thirdParagraph))
